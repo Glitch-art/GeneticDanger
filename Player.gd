@@ -28,7 +28,19 @@ func get_input_axis():
 	var axis = Vector2.ZERO
 	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	if(axis.x > 0):
+		$Img.flip_h = true
+		$Img.animation = "Left"
+	if(axis.x < 0):
+		$Img.flip_h = false
+		$Img.animation = "Left"
+	if(axis.length() > 0):
+		$Img.play()
+		axis.normalized()
+	else:
+		$Img.stop()
 	return axis.normalized()
+	
 
 func apply_friction(amount):
 	if motion.length() > amount:

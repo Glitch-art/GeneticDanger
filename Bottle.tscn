@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Objetos.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 24 )
 
 [node name="Bottle" type="KinematicBody2D" groups=[
@@ -14,7 +14,7 @@ __meta__ = {
 }
 
 [node name="Collision_Bottle" type="CollisionShape2D" parent="."]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Sprite_Bottle" type="Sprite" parent="."]
 scale = Vector2( 1.5, 1.5 )
