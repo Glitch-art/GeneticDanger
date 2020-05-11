@@ -40,12 +40,12 @@ Player = ExtResource( 8 )
 Bottle = ExtResource( 9 )
 
 [node name="texture_grass" type="Sprite" parent="."]
-position = Vector2( 432, 288 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 995.646, 544 )
+scale = Vector2( 1.15078, 1.15078 )
 texture = ExtResource( 4 )
 
 [node name="Start" type="Area2D" parent="."]
-position = Vector2( 480, 289.507 )
+position = Vector2( 1008, 488 )
 scale = Vector2( 0.98, 1.04135 )
 __meta__ = {
 "_edit_group_": true
@@ -62,23 +62,26 @@ scale = Vector2( 1.02041, 0.960289 )
 shape = SubResource( 1 )
 
 [node name="Carcel" type="StaticBody2D" parent="."]
-position = Vector2( 368, 128 )
+position = Vector2( 896, 1216 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Carcel"]
-position = Vector2( 64, 632 )
+position = Vector2( 38.9996, 144 )
 scale = Vector2( 2.17458, 2.83259 )
 polygon = PoolVector2Array( -2.75914, 3.1773, 48.7451, 3.1773, 74.4972, 3.1773, 74.4972, 6.00156, -6.43802, 6.00156, -6.43802, -44.8353, 74.4972, -44.8353, 74.4972, 3.1773, 70.8183, 3.1773, 70.8183, -42.011, -2.75914, -42.011 )
 
 [node name="start" type="Sprite" parent="Carcel/CollisionPolygon2D"]
-position = Vector2( 26.6719, 65.577 )
+position = Vector2( 32.6498, -19.8572 )
 scale = Vector2( 0.134314, 0.134314 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Movimiento" type="Sprite" parent="GUI"]
 modulate = Color( 1, 1, 1, 0.545098 )
-position = Vector2( 160, 464 )
-scale = Vector2( 1.15481, 1.15481 )
+position = Vector2( 350, 796 )
+scale = Vector2( 2.14448, 2.14448 )
 texture = ExtResource( 2 )
 
 [node name="up" type="TouchScreenButton" parent="GUI/Movimiento"]
@@ -111,8 +114,9 @@ action = "ui_right"
 
 [node name="Disparo" type="Sprite" parent="GUI"]
 modulate = Color( 1, 1, 1, 0.545098 )
-position = Vector2( 838.052, 461.053 )
-scale = Vector2( 1.15481, 1.15481 )
+position = Vector2( 1576, 796 )
+rotation = -2.76203e-05
+scale = Vector2( 2.114, 2.114 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -148,14 +152,14 @@ action = "shoot_right"
 
 [node name="Reset" type="TouchScreenButton" parent="GUI"]
 position = Vector2( 64, 64 )
-scale = Vector2( 41, 40 )
+scale = Vector2( 63.3084, 64 )
 normal = SubResource( 3 )
 pressed = SubResource( 5 )
 shape = SubResource( 6 )
 action = "Tecla_Morir"
 
 [node name="SpawnEnemy" type="Position2D" parent="."]
-position = Vector2( 923.508, 208 )
+position = Vector2( 1728, 128 )
 script = ExtResource( 5 )
 Enemy = ExtResource( 6 )
 
@@ -166,7 +170,7 @@ autostart = true
 [node name="SpawnPlayer" type="Position2D" parent="." groups=[
 "SpawnPlayer_group",
 ]]
-position = Vector2( 480, 288 )
+position = Vector2( 1008, 488 )
 
 [node name="Area2D" type="Area2D" parent="."]
 

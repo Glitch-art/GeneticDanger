@@ -64,20 +64,20 @@ animations = [ {
 "name": "AtackDown",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Atack",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 26 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 22 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 35 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "AtackUp",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Atack",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 24.0
-height = 64.0
+radius = 48.0
+height = 112.0
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Player_group",
@@ -88,18 +88,20 @@ __meta__ = {
 }
 
 [node name="Img" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.306954, 0.306954 )
+position = Vector2( -7.62939e-06, -64 )
+scale = Vector2( 0.57554, 0.57554 )
 frames = SubResource( 1 )
 animation = "Down"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -64 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -64 )
 current = true
-smoothing_speed = 2.0
+smoothing_enabled = true
 drag_margin_left = 0.5
 drag_margin_top = 0.6
 drag_margin_right = 0.5

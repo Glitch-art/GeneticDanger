@@ -24,10 +24,12 @@ func death():
 	add_child(newPlayer)
 	newPlayer.global_position = get_tree().get_nodes_in_group("SpawnPlayer_group")[0].global_position
 	
-	
+
 	# Reiniciar Botella
 	get_tree().get_nodes_in_group("Bottle_group")[0].queue_free()
 	var newBottle = Bottle.instance()
 	add_child(newBottle)
 	newBottle.global_position = Vector2(928,96)
 	
+	
+	get_tree().change_scene("res://Gameover.tscn")
