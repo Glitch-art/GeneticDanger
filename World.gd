@@ -11,7 +11,7 @@ func _ready():
 	# Crear Botella (instanciar la escena Botella.tscn)
 	var newBottle = Bottle.instance()
 	add_child(newBottle)
-	newBottle.global_position = Vector2(928,96)
+	newBottle.global_position = Vector2(1080,96)
 
 func death():
 	# Opcion 1: Teletrasportar el jugador
@@ -29,7 +29,7 @@ func death():
 	get_tree().get_nodes_in_group("Bottle_group")[0].queue_free()
 	var newBottle = Bottle.instance()
 	add_child(newBottle)
-	newBottle.global_position = Vector2(928,96)
+	newBottle.global_position = Vector2(1080,96)
 	
 	
 # warning-ignore:return_value_discarded
