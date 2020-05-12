@@ -32,4 +32,5 @@ func death():
 	newBottle.global_position = Vector2(928,96)
 	
 	
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Gameover.tscn")

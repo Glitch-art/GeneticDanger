@@ -1,81 +1,87 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Sprites Player/Atack(9).png" type="Texture" id=1]
+[ext_resource path="res://Sprites Personajes/Sprites Personajes.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://Sprites Player/Atack(10).png" type="Texture" id=3]
-[ext_resource path="res://Sprites Player/Atack(7).png" type="Texture" id=4]
-[ext_resource path="res://Sprites Player/AtackDown(2).png" type="Texture" id=5]
-[ext_resource path="res://Sprites Player/AtackDown(1).png" type="Texture" id=6]
-[ext_resource path="res://Sprites Player/AtackDown(3).png" type="Texture" id=7]
-[ext_resource path="res://Sprites Player/Atack(1).png" type="Texture" id=8]
-[ext_resource path="res://Sprites Player/Atack(3).png" type="Texture" id=9]
-[ext_resource path="res://Sprites Player/Atack(4).png" type="Texture" id=10]
-[ext_resource path="res://Sprites Player/Atack(5).png" type="Texture" id=11]
-[ext_resource path="res://Sprites Player/Atack(2).png" type="Texture" id=12]
-[ext_resource path="res://Sprites Player/Atack(6).png" type="Texture" id=13]
-[ext_resource path="res://Sprites Player/Atack(8).png" type="Texture" id=14]
-[ext_resource path="res://Sprites Player/Down(4).png" type="Texture" id=15]
-[ext_resource path="res://Sprites Player/AtackDown(8).png" type="Texture" id=16]
-[ext_resource path="res://Sprites Player/AtackDown(7).png" type="Texture" id=17]
-[ext_resource path="res://Sprites Player/AtackUp(1).png" type="Texture" id=18]
-[ext_resource path="res://Sprites Player/AtackUp(9).png" type="Texture" id=19]
-[ext_resource path="res://Sprites Player/Down(3).png" type="Texture" id=20]
-[ext_resource path="res://Sprites Player/AtackDown(6).png" type="Texture" id=21]
-[ext_resource path="res://Sprites Player/AtackUp(5).png" type="Texture" id=22]
-[ext_resource path="res://Sprites Player/Left(2).png" type="Texture" id=23]
-[ext_resource path="res://Sprites Player/AtackDown(4).png" type="Texture" id=24]
-[ext_resource path="res://Sprites Player/AtackDown(9).png" type="Texture" id=25]
-[ext_resource path="res://Sprites Player/AtackUp(2).png" type="Texture" id=26]
-[ext_resource path="res://Sprites Player/Down(2).png" type="Texture" id=27]
-[ext_resource path="res://Sprites Player/Up(1).png" type="Texture" id=28]
-[ext_resource path="res://Sprites Player/Up(2).png" type="Texture" id=29]
-[ext_resource path="res://Sprites Player/Left(5).png" type="Texture" id=30]
-[ext_resource path="res://Sprites Player/AtackUp(7).png" type="Texture" id=31]
-[ext_resource path="res://Sprites Player/Up(3).png" type="Texture" id=32]
-[ext_resource path="res://Sprites Player/Left(6).png" type="Texture" id=33]
-[ext_resource path="res://Sprites Player/Up(4).png" type="Texture" id=34]
-[ext_resource path="res://Sprites Player/AtackUp(8).png" type="Texture" id=35]
-[ext_resource path="res://Sprites Player/AtackUp(4).png" type="Texture" id=36]
-[ext_resource path="res://Sprites Player/AtackDown(5).png" type="Texture" id=37]
-[ext_resource path="res://Sprites Player/AtackUp(6).png" type="Texture" id=38]
-[ext_resource path="res://Sprites Player/Down(1).png" type="Texture" id=39]
-[ext_resource path="res://Sprites Player/AtackUp(3).png" type="Texture" id=40]
-[ext_resource path="res://Sprites Player/Left(3).png" type="Texture" id=41]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 450, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 450, 450, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 900, 450, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1350, 450, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 900, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 450, 900, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 900, 900, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1350, 900, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 1350, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 450, 1350, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 900, 1350, 450, 450 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1350, 1350, 450, 450 )
+
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 34 ) ],
-"loop": true,
-"name": "Up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 39 ), ExtResource( 27 ), ExtResource( 20 ), ExtResource( 15 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 41 ), ExtResource( 30 ), ExtResource( 33 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Up",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "Left",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "AtackDown",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 26 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 22 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 35 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "AtackUp",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Atack",
-"speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=14]
 radius = 48.0
 height = 112.0
 
@@ -88,18 +94,19 @@ __meta__ = {
 }
 
 [node name="Img" type="AnimatedSprite" parent="."]
-position = Vector2( -7.62939e-06, -64 )
-scale = Vector2( 0.57554, 0.57554 )
-frames = SubResource( 1 )
+position = Vector2( 0.25, -87.75 )
+scale = Vector2( 0.534444, 0.534444 )
+frames = SubResource( 13 )
 animation = "Down"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -64 )
-shape = SubResource( 2 )
+position = Vector2( 0.499992, -88 )
+shape = SubResource( 14 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -64 )
+position = Vector2( 0, -88 )
 current = true
 smoothing_enabled = true
 drag_margin_left = 0.5
