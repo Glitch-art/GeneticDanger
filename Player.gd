@@ -24,6 +24,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Tecla_Morir"):
 		get_tree().get_nodes_in_group("World")[0].death() # Funcion death (Morir)
 
+# Movimiento
 func get_input_axis():
 	var axis = Vector2.ZERO
 	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
@@ -64,4 +65,8 @@ func apply_friction(amount):
 func apply_movement(acceleration):
 	motion += acceleration
 	motion = motion.clamped(MAX_SPEED)
- 
+
+
+
+
+

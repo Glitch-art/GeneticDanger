@@ -25,4 +25,9 @@ frame = 85
 
 [node name="CollisionPerson" type="CollisionShape2D" parent="AreaPerson"]
 shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
 [connection signal="area_entered" from="AreaPerson" to="." method="_on_AreaPerson_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,14 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Navegacion/Navegacion.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/TileSet/TileSet.tres" type="TileSet" id=4]
-[ext_resource path="res://SpawnEnemy.gd" type="Script" id=5]
 [ext_resource path="res://start.jpg" type="Texture" id=7]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Person.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 96, 72 )
@@ -41,19 +39,10 @@ position = Vector2( 0, -3.05176e-05 )
 scale = Vector2( 0.979592, 1.03971 )
 texture = ExtResource( 7 )
 
-[node name="Collision_Start" type="CollisionShape2D" parent="Start"]
+[node name="CollisionStart" type="CollisionShape2D" parent="Start"]
 position = Vector2( 0, -3.05176e-05 )
 scale = Vector2( 1.02041, 0.960289 )
 shape = SubResource( 1 )
-
-[node name="SpawnEnemy" type="Position2D" parent="."]
-position = Vector2( 1288, -48 )
-script = ExtResource( 5 )
-Enemy = ExtResource( 11 )
-
-[node name="Timer" type="Timer" parent="SpawnEnemy"]
-wait_time = 3.0
-autostart = true
 
 [node name="SpawnPlayer" type="Position2D" parent="." groups=[
 "SpawnPlayer_group",
@@ -64,4 +53,3 @@ position = Vector2( 648, 544 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
-[connection signal="timeout" from="SpawnEnemy/Timer" to="SpawnEnemy" method="_on_Timer_timeout"]

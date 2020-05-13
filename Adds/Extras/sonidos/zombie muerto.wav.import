@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/zombie muerto.wav-f8c6e6ea77ac74409d9ccbbf94a02c28.sample"
+
+[deps]
+
+source_file="res://Adds/Extras/sonidos/zombie muerto.wav"
+dest_files=[ "res://.import/zombie muerto.wav-f8c6e6ea77ac74409d9ccbbf94a02c28.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

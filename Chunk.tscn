@@ -4,9 +4,10 @@
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 256, 128 )
+extents = Vector2( 585, 128 )
 
 [node name="Chunk" type="Area2D"]
+position = Vector2( -1, 0 )
 script = ExtResource( 1 )
 Enemy = ExtResource( 2 )
 
@@ -16,19 +17,21 @@ disabled = true
 
 [node name="SpawnEnemy1" type="Position2D" parent="Shape"]
 self_modulate = Color( 0.0431373, 0.533333, 0, 1 )
-position = Vector2( -176, -80 )
+position = Vector2( -479, -56 )
 
 [node name="SpawnEnemy2" type="Position2D" parent="Shape"]
 self_modulate = Color( 0.0431373, 0.533333, 0, 1 )
-position = Vector2( -64, 80 )
+position = Vector2( -208, 80 )
 
 [node name="SpawnEnemy3" type="Position2D" parent="Shape"]
 self_modulate = Color( 0.0431373, 0.533333, 0, 1 )
-position = Vector2( 96, -32 )
+position = Vector2( 472, -32 )
 rotation = 0.011886
 
 [node name="SpawnPerson" type="Position2D" parent="Shape"]
-position = Vector2( -32, -16 )
+position = Vector2( 72, -64 )
 
 [node name="TimerChunk" type="Timer" parent="."]
 wait_time = 5.0
+autostart = true
+[connection signal="timeout" from="TimerChunk" to="." method="_on_TimerChunk_timeout"]
