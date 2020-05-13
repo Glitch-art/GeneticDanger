@@ -1,14 +1,16 @@
 extends KinematicBody2D
 
-export (float) var velocidad
-var pos_objetivo = Vector2()
-var navegacion = Navigation2D
 
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	set_physics_process(true)
-	navegacion = get_tree().get_nodes_in_group("Navegacion")[0]
-	objetivo = get_tree().get_nodes_in_group("objetivo")[0]
-	
+	pass # Replace with function body.
 
-func _physics_process(delta):
-	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
