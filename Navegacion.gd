@@ -3,17 +3,18 @@ extends Navigation2D
 var velocidad = 200
 var path = []
 
-func _input(event):
-	if event.is_action_pressed("Click_Izq"):
-		_nueva_ruta($Enemy.position,get_global_mouse_position())
+func _physics_process(delta):
+	if(get_tree().get_nodes_in_group("Player_group")[0]):
+		var distancia = velocidad * delta
+		_seguir_ruta(distancia)
+		_posicion()
+
+func _posicion():
+		_nueva_ruta($Enemy.position,get_tree().get_nodes_in_group("Player_group")[0].position)
 
 func _nueva_ruta(pos_inicial,pos_final):
 	path = self.get_simple_path(pos_inicial,pos_final,true)
 	path.remove(0)
-
-func _physics_process(delta):
-	var distancia = velocidad * delta
-	_seguir_ruta(distancia)
 
 func _seguir_ruta(distancia):
 	var ultima_pos = $Enemy.position
