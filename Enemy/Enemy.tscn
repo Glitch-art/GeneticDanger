@@ -5,7 +5,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.168, 30.9743 )
 
-[node name="Enemigo" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=[
+"Enemy_group",]
 __meta__ = {
 "_edit_group_": true
 }

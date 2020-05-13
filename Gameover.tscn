@@ -101,7 +101,7 @@ __meta__ = {
 position = Vector2( -757, -336 )
 scale = Vector2( 0.613333, 0.613333 )
 frames = SubResource( 4 )
-frame = 20
+frame = 15
 playing = true
 
 [node name="Wallpaper" type="Sprite" parent="."]

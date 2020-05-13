@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Down(2).png-cfc921b0bead7f7c11784540a3ed50ca.stex"
+path="res://.import/Down(2).png-e5b4b6a2c8e930bc5001bca23794b227.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites Player/Down(2).png"
-dest_files=[ "res://.import/Down(2).png-cfc921b0bead7f7c11784540a3ed50ca.stex" ]
+source_file="res://Adds/Sprites Player/Down(2).png"
+dest_files=[ "res://.import/Down(2).png-e5b4b6a2c8e930bc5001bca23794b227.stex" ]
 
 [params]
 

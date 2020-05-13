@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AtackDown(2).png-2e83a44ebb5fe7323b3a9d8946a3dcb2.stex"
+path="res://.import/AtackDown(2).png-3484bf608cc3fe56c79d7183ae208989.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites Player/AtackDown(2).png"
-dest_files=[ "res://.import/AtackDown(2).png-2e83a44ebb5fe7323b3a9d8946a3dcb2.stex" ]
+source_file="res://Adds/Sprites Player/AtackDown(2).png"
+dest_files=[ "res://.import/AtackDown(2).png-3484bf608cc3fe56c79d7183ae208989.stex" ]
 
 [params]
 
