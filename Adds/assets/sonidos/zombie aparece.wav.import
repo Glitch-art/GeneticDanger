@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/zombie aparece.wav-f81f418831cc0b58ffbab2dd167a9740.sample"
+
+[deps]
+
+source_file="res://Adds/assets/sonidos/zombie aparece.wav"
+dest_files=[ "res://.import/zombie aparece.wav-f81f418831cc0b58ffbab2dd167a9740.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

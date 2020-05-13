@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/golpeado.wav-98dab6e3116c879787a2446cc0ebe555.sample"
+
+[deps]
+
+source_file="res://Adds/assets/sonidos/golpeado.wav"
+dest_files=[ "res://.import/golpeado.wav-98dab6e3116c879787a2446cc0ebe555.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
