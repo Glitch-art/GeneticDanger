@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Flechas.png" type="Texture" id=1]
+[ext_resource path="res://transparente.tres" type="Texture" id=2]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.230469, 0, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 1
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0.929688, 0, 0, 1, 0.824219, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+width = 1
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 0.5
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="Movimiento" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.545098 )
+position = Vector2( 350, 796 )
+scale = Vector2( 2.14448, 2.14448 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="up" type="TouchScreenButton" parent="Movimiento"]
+position = Vector2( -20.3229, -64.3789 )
+scale = Vector2( 40, 45 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+action = "ui_up"
+
+[node name="down" type="TouchScreenButton" parent="Movimiento"]
+position = Vector2( -20.3229, 18 )
+scale = Vector2( 40, 45 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+action = "ui_down"
+
+[node name="left" type="TouchScreenButton" parent="Movimiento"]
+position = Vector2( -63.2782, -20.3789 )
+scale = Vector2( 45, 40 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+action = "ui_left"
+
+[node name="right" type="TouchScreenButton" parent="Movimiento"]
+position = Vector2( 19.6771, -20.3789 )
+scale = Vector2( 45, 40 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+action = "ui_right"
+
+[node name="Disparo" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.545098 )
+position = Vector2( 1576, 796 )
+rotation = -2.76203e-05
+scale = Vector2( 2.114, 2.114 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="up" type="TouchScreenButton" parent="Disparo"]
+position = Vector2( -20.3229, -64.3789 )
+scale = Vector2( 40, 45 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+action = "shoot_up"
+
+[node name="down" type="TouchScreenButton" parent="Disparo"]
+position = Vector2( -20.3229, 18 )
+scale = Vector2( 40, 45 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+action = "shoot_down"
+
+[node name="left" type="TouchScreenButton" parent="Disparo"]
+position = Vector2( -63.2782, -20.3789 )
+scale = Vector2( 45, 40 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+action = "shoot_left"
+
+[node name="right" type="TouchScreenButton" parent="Disparo"]
+position = Vector2( 19.6771, -20.3789 )
+scale = Vector2( 45, 40 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+action = "shoot_right"
+
+[node name="Reset" type="TouchScreenButton" parent="."]
+position = Vector2( 64, 64 )
+scale = Vector2( 63.3084, 64 )
+normal = SubResource( 2 )
+pressed = SubResource( 4 )
+shape = SubResource( 5 )
+action = "Tecla_Morir"
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Salud" type="ProgressBar" parent="."]
+margin_right = 4.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
