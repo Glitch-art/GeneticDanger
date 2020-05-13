@@ -49,6 +49,7 @@ tile_data = PoolIntArray( 0, 6, 0, 16, -1610612733, 0, 17, -1610612735, 0, 22, 1
 
 [node name="Navegacion" type="Navigation2D" parent="."]
 script = ExtResource( 13 )
+Player = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="Navegacion"]
 tile_set = ExtResource( 10 )
@@ -75,21 +76,6 @@ texture = ExtResource( 7 )
 position = Vector2( 0, -3.05176e-05 )
 scale = Vector2( 1.02041, 0.960289 )
 shape = SubResource( 1 )
-
-[node name="Carcel" type="StaticBody2D" parent="."]
-position = Vector2( 896, 1216 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Carcel"]
-position = Vector2( 38.9996, 144 )
-scale = Vector2( 2.17458, 2.83259 )
-polygon = PoolVector2Array( -2.75914, 3.1773, 48.7451, 3.1773, 74.4972, 3.1773, 74.4972, 6.00156, -6.43802, 6.00156, -6.43802, -44.8353, 74.4972, -44.8353, 74.4972, 3.1773, 70.8183, 3.1773, 70.8183, -42.011, -2.75914, -42.011 )
-
-[node name="start" type="Sprite" parent="Carcel/CollisionPolygon2D"]
-position = Vector2( 32.6498, -19.8572 )
-scale = Vector2( 0.134314, 0.134314 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
