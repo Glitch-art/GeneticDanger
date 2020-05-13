@@ -1,43 +1,25 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
-[ext_resource path="res://Flechas.png" type="Texture" id=2]
-[ext_resource path="res://transparente.tres" type="Texture" id=3]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/TileSet/TileSet.tres" type="TileSet" id=4]
 [ext_resource path="res://SpawnEnemy.gd" type="Script" id=5]
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://start.jpg" type="Texture" id=7]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Bottle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Person.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 96, 72 )
 
-[sub_resource type="Gradient" id=2]
-colors = PoolColorArray( 0.230469, 0, 0, 1, 0, 0, 0, 1 )
-
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
-width = 1
-
-[sub_resource type="Gradient" id=4]
-colors = PoolColorArray( 0.929688, 0, 0, 1, 0.824219, 0, 0, 1 )
-
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
-width = 1
-
-[sub_resource type="CircleShape2D" id=6]
-radius = 0.5
-
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="World" type="Node" groups=[
 "World",
 ]]
 script = ExtResource( 1 )
 Player = ExtResource( 8 )
-Bottle = ExtResource( 9 )
+Person = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -82,90 +64,7 @@ polygon = PoolVector2Array( -2.75914, 3.1773, 48.7451, 3.1773, 74.4972, 3.1773, 
 position = Vector2( 32.6498, -19.8572 )
 scale = Vector2( 0.134314, 0.134314 )
 
-[node name="GUI" type="CanvasLayer" parent="."]
-
-[node name="Movimiento" type="Sprite" parent="GUI"]
-modulate = Color( 1, 1, 1, 0.545098 )
-position = Vector2( 350, 796 )
-scale = Vector2( 2.14448, 2.14448 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="up" type="TouchScreenButton" parent="GUI/Movimiento"]
-position = Vector2( -20.3229, -64.3789 )
-scale = Vector2( 40, 45 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
-action = "ui_up"
-
-[node name="down" type="TouchScreenButton" parent="GUI/Movimiento"]
-position = Vector2( -20.3229, 18 )
-scale = Vector2( 40, 45 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
-action = "ui_down"
-
-[node name="left" type="TouchScreenButton" parent="GUI/Movimiento"]
-position = Vector2( -63.2782, -20.3789 )
-scale = Vector2( 45, 40 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
-action = "ui_left"
-
-[node name="right" type="TouchScreenButton" parent="GUI/Movimiento"]
-position = Vector2( 19.6771, -20.3789 )
-scale = Vector2( 45, 40 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
-action = "ui_right"
-
-[node name="Disparo" type="Sprite" parent="GUI"]
-modulate = Color( 1, 1, 1, 0.545098 )
-position = Vector2( 1576, 796 )
-rotation = -2.76203e-05
-scale = Vector2( 2.114, 2.114 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="up" type="TouchScreenButton" parent="GUI/Disparo"]
-position = Vector2( -20.3229, -64.3789 )
-scale = Vector2( 40, 45 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
-action = "shoot_up"
-
-[node name="down" type="TouchScreenButton" parent="GUI/Disparo"]
-position = Vector2( -20.3229, 18 )
-scale = Vector2( 40, 45 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
-action = "shoot_down"
-
-[node name="left" type="TouchScreenButton" parent="GUI/Disparo"]
-position = Vector2( -63.2782, -20.3789 )
-scale = Vector2( 45, 40 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
-action = "shoot_left"
-
-[node name="right" type="TouchScreenButton" parent="GUI/Disparo"]
-position = Vector2( 19.6771, -20.3789 )
-scale = Vector2( 45, 40 )
-normal = ExtResource( 3 )
-pressed = ExtResource( 3 )
-action = "shoot_right"
-
-[node name="Reset" type="TouchScreenButton" parent="GUI"]
-position = Vector2( 64, 64 )
-scale = Vector2( 63.3084, 64 )
-normal = SubResource( 3 )
-pressed = SubResource( 5 )
-shape = SubResource( 6 )
-action = "Tecla_Morir"
+[node name="GUI" parent="." instance=ExtResource( 2 )]
 
 [node name="SpawnEnemy" type="Position2D" parent="."]
 position = Vector2( 1728, 128 )
@@ -184,5 +83,5 @@ position = Vector2( 1008, 488 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 [connection signal="timeout" from="SpawnEnemy/Timer" to="SpawnEnemy" method="_on_Timer_timeout"]

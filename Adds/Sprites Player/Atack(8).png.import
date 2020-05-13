@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Atack(8).png-b97f40e8e884603f55517b40c65208fe.stex"
+path="res://.import/Atack(8).png-54f7e7d70f3a05fb3dc0ba911be8704b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites Player/Atack(8).png"
-dest_files=[ "res://.import/Atack(8).png-b97f40e8e884603f55517b40c65208fe.stex" ]
+source_file="res://Adds/Sprites Player/Atack(8).png"
+dest_files=[ "res://.import/Atack(8).png-54f7e7d70f3a05fb3dc0ba911be8704b.stex" ]
 
 [params]
 
