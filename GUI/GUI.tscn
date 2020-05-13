@@ -1,0 +1,258 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Flechas.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/CANDARAB.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/pingwing.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://GUI/UI/lifebar_fill.png" type="Texture" id=4]
+[ext_resource path="res://GUI/UI/lifebar_bg.png" type="Texture" id=5]
+[ext_resource path="res://GUI/UI/config.png" type="Texture" id=6]
+[ext_resource path="res://GUI/UI/label_HP.png" type="Texture" id=7]
+[ext_resource path="res://GUI/UI/label_HP_bg.png" type="Texture" id=8]
+[ext_resource path="res://GUI/GUI.gd" type="Script" id=9]
+[ext_resource path="res://transparente.tres" type="Texture" id=10]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.230469, 0, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 1
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0.929688, 0, 0, 1, 0.824219, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+width = 1
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 0.5
+
+[sub_resource type="DynamicFont" id=6]
+size = 36
+extra_spacing_top = 9
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 62
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 60
+font_data = ExtResource( 3 )
+
+[node name="GUI" type="CanvasLayer" groups=[
+"GUI",
+]]
+script = ExtResource( 9 )
+
+[node name="Movimiento" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.545098 )
+position = Vector2( 310.803, 834.601 )
+scale = Vector2( 2.14448, 2.14448 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="up" type="TouchScreenButton" parent="Movimiento"]
+position = Vector2( -20.3229, -64.3789 )
+scale = Vector2( 40, 45 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 10 )
+action = "ui_up"
+
+[node name="down" type="TouchScreenButton" parent="Movimiento"]
+position = Vector2( -20.3229, 18 )
+scale = Vector2( 40, 45 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 10 )
+action = "ui_down"
+
+[node name="left" type="TouchScreenButton" parent="Movimiento"]
+position = Vector2( -63.2782, -20.3789 )
+scale = Vector2( 45, 40 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 10 )
+action = "ui_left"
+
+[node name="right" type="TouchScreenButton" parent="Movimiento"]
+position = Vector2( 19.6771, -20.3789 )
+scale = Vector2( 45, 40 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 10 )
+action = "ui_right"
+
+[node name="Disparo" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.545098 )
+position = Vector2( 1616, 832 )
+rotation = -2.76203e-05
+scale = Vector2( 2.114, 2.114 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="up" type="TouchScreenButton" parent="Disparo"]
+position = Vector2( -20.3229, -64.3789 )
+scale = Vector2( 40, 45 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 10 )
+action = "shoot_up"
+
+[node name="down" type="TouchScreenButton" parent="Disparo"]
+position = Vector2( -20.3229, 18 )
+scale = Vector2( 40, 45 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 10 )
+action = "shoot_down"
+
+[node name="left" type="TouchScreenButton" parent="Disparo"]
+position = Vector2( -63.2782, -20.3789 )
+scale = Vector2( 45, 40 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 10 )
+action = "shoot_left"
+
+[node name="right" type="TouchScreenButton" parent="Disparo"]
+position = Vector2( 19.6771, -20.3789 )
+scale = Vector2( 45, 40 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 10 )
+action = "shoot_right"
+
+[node name="Reset" type="TouchScreenButton" parent="."]
+position = Vector2( 64, 128 )
+scale = Vector2( 63.3084, 64 )
+normal = SubResource( 2 )
+pressed = SubResource( 4 )
+shape = SubResource( 5 )
+action = "Tecla_Morir"
+
+[node name="UI" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 105.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vida" type="HBoxContainer" parent="UI"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1900.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 0, 65 )
+
+[node name="barra" type="HBoxContainer" parent="UI/vida"]
+margin_right = 1876.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 0, 65 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="contador" type="MarginContainer" parent="UI/vida/barra"]
+margin_right = 120.0
+margin_bottom = 60.0
+size_flags_vertical = 0
+
+[node name="fondo" type="NinePatchRect" parent="UI/vida/barra/contador"]
+margin_right = 120.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 120, 60 )
+texture = ExtResource( 8 )
+
+[node name="titulo" type="TextureRect" parent="UI/vida/barra/contador/fondo"]
+margin_left = 2.0
+margin_top = 6.0
+margin_right = 60.0
+margin_bottom = 53.0
+texture = ExtResource( 7 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numero" type="Label" parent="UI/vida/barra/contador/fondo" groups=[
+"LifeLabel",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_top = 14.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 6 )
+text = "100"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="medidor" type="TextureProgress" parent="UI/vida/barra" groups=[
+"LifeBar",
+]]
+margin_left = 124.0
+margin_right = 520.0
+margin_bottom = 65.0
+size_flags_vertical = 3
+value = 30.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 4 )
+
+[node name="pausa" type="HBoxContainer" parent="UI/vida"]
+margin_left = 1880.0
+margin_right = 1880.0
+margin_bottom = 65.0
+
+[node name="Pause" type="TouchScreenButton" parent="UI/vida/pausa"]
+position = Vector2( -76, -7 )
+scale = Vector2( 0.140625, 0.162109 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 6 )
+action = "Tecla_pausa"
+
+[node name="Score" type="Label" parent="." groups=[
+"Score",
+]]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -448.0
+margin_top = 16.0
+margin_right = 451.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "1234567890"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="." groups=[
+"Time",
+]]
+margin_left = 1424.0
+margin_top = 16.0
+margin_right = 1814.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 8 )
+text = "12:03:12"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

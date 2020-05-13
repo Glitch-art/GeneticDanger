@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World/TileSet/TileSetCalle.tres" type="TileSet" id=1]
-[ext_resource path="res://Navegacion.gd" type="Script" id=2]
+[ext_resource path="res://World/Navegacion/Navegacion.gd" type="Script" id=2]
+[ext_resource path="res://Chunk.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=4]
 
 [node name="Navegacion" type="Navigation2D"]
@@ -15,3 +16,9 @@ tile_data = PoolIntArray( 65533, -1610612736, 0, 65534, -2147483648, 0, 9, -1610
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( -263.553, 75.1317 )
+
+[node name="Chunk" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 768 )
+
+[node name="Chunk2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2048, 768 )

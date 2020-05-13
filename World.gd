@@ -19,7 +19,6 @@ func _ready():
 	var newGUI = GUI.instance()
 	add_child(newGUI)
 	
-	
 	# Crear Person (instanciar la escena Person.tscn)
 	var newPerson = Person.instance()
 	add_child(newPerson)
@@ -27,6 +26,9 @@ func _ready():
 	
 
 func death():
+	# Cambiar escena Fin del Juego
+	get_tree().change_scene("res://Gameover.tscn")
+	
 #	# Opcion 1: Teletrasportar el jugador
 ##	get_tree().get_nodes_in_group("Player_group")[0].global_position = get_tree().get_nodes_in_group("SpawnPlayer_group")[0].global_position
 #
@@ -53,26 +55,3 @@ func death():
 #			enemigos[i].queue_free()
 #	#Pausar Spawn de enemigos
 #	$SpawnEnemy/Timer.set_paused(true)
-	
-	
-	
-# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Gameover.tscn")
-
-
-var puntos = 2
-var vidas = []
-
-func update_puntos():
-	#get_tree().get_nodes_in_group("puntos")[0].text = String(Puntos)
-	pass
-
-func update_vida():
-#	var newVida = vida.instance()
-#	$GUI.add_child(newVida)
-#	newVida.global_position += Vector2(offset*a,0)
-	pass
-
-
-
-
