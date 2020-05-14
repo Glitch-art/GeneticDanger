@@ -35,7 +35,7 @@ func createEnemy(numSpawn:String):
 	#instanciar el nuevo enemigo
 	var newEnemy = Enemy.instance()
 	# Obtener nodos en el grupo "World"  ...  Añadirle al grupo "World" el newEnemigo
-	get_tree().get_nodes_in_group("World")[0].add_child(newEnemy)
+	get_tree().get_nodes_in_group("navegacion")[0].add_child(newEnemy)
 	#Establecer posicion
 	newEnemy.global_position = get_node("Shape/SpawnEnemy" + numSpawn).global_position
 	

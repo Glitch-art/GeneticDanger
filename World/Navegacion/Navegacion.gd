@@ -13,7 +13,8 @@ func _physics_process(delta):
 				_posicion()
 
 func _posicion():
-		_nueva_ruta($Enemy.position,get_tree().get_nodes_in_group("Player_group")[0].position)
+		 _nueva_ruta($Enemy.position,get_tree().get_nodes_in_group("Player_group")[0].position)
+
 
 func _nueva_ruta(pos_inicial,pos_final):
 	path = self.get_simple_path(pos_inicial,pos_final,true)
@@ -21,6 +22,7 @@ func _nueva_ruta(pos_inicial,pos_final):
 
 func _seguir_ruta(enemy,distancia):
 	var ultima_pos = enemy.position
+# warning-ignore:unused_variable
 	for i in range(path.size()):
 		var distancia_al_final = ultima_pos.distance_to(path[0])
 		if distancia <= distancia_al_final:
@@ -32,5 +34,3 @@ func _seguir_ruta(enemy,distancia):
 		distancia -= distancia_al_final
 		ultima_pos = path[0]
 		path.remove(0)
-
-#var enemigos = get_tree().get_nodes_in_group("Enemy_group")
