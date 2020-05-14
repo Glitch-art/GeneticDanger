@@ -33,21 +33,19 @@ func get_input_axis():
 	if(axis.x > 0):
 		$Img.flip_h = true
 		$Img.animation = "Left"
-	
 	if(axis.x < 0):
 		$Img.flip_h = false
 		$Img.animation = "Left"
-	
+		
 	if(axis.length() > 0):
 		$Img.play()
 		axis.normalized()
-	
+		
 	if(axis.y > 0):
 		$Img.animation = "Down"
-	
 	if(axis.y < 0):
 		$Img.animation = "Up"
-	
+		
 	if(axis.length() > 0):
 		$Img.play()
 		axis.normalized()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=2]
@@ -10,8 +10,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 96, 72 )
-
-[sub_resource type="RectangleShape2D" id=2]
 
 [node name="World" type="Node" groups=[
 "World",
@@ -48,8 +46,3 @@ shape = SubResource( 1 )
 "SpawnPlayer_group",
 ]]
 position = Vector2( 648, 544 )
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 2 )
