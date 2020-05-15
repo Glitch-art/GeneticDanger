@@ -10,7 +10,7 @@
 [ext_resource path="res://GUI/UI/label_HP_bg.png" type="Texture" id=8]
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=9]
 [ext_resource path="res://transparente.tres" type="Texture" id=10]
-[ext_resource path="res://Sprites Personajes/Sprites Personajes.png" type="Texture" id=11]
+[ext_resource path="res://Sprites Personajes/Persona-Tapabocas.png" type="Texture" id=11]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.230469, 0, 0, 1, 0, 0, 0, 1 )
@@ -46,22 +46,22 @@ font_data = ExtResource( 3 )
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 11 )
-region = Rect2( 0, 1800, 450, 450 )
+region = Rect2( 0, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 11 )
-region = Rect2( 450, 1800, 450, 450 )
+region = Rect2( 0, 100, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 11 )
-region = Rect2( 900, 1800, 450, 450 )
+region = Rect2( 0, 200, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 11 )
-region = Rect2( 1350, 1800, 450, 450 )
+region = Rect2( 0, 300, 100, 100 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -289,8 +289,7 @@ autostart = true
 "GUI_Persona",
 ]]
 position = Vector2( 1856, 192 )
-scale = Vector2( 0.355556, 0.355556 )
 frames = SubResource( 13 )
-frame = 5
+frame = 3
 playing = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

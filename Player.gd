@@ -1,28 +1,28 @@
 extends KinematicBody2D
 
 onready var GUI = get_tree().get_nodes_in_group("GUI")[0]
-export (PackedScene) var attackUpLoad
-var attackUpInstance
-export (PackedScene) var attackDownLoad
-var attackDownInstance
-export (PackedScene) var attackLeftLoad
-var attackLeftInstance
+export (PackedScene) var atackUpLoad
+var atackUpInstance
+export (PackedScene) var atackDownLoad
+var atackDownInstance
+export (PackedScene) var atackLeftLoad
+var atackLeftInstance
 
 var MAX_SPEED = 500
 var ACCELERATION = 2000
 var motion = Vector2()
 
-var is_attack = false
-var attack_up = false
-var attack_down = false
-var attack_left = false
+var is_atack = false
+var atack_up = false
+var atack_down = false
+var atack_left = false
 var time = false
 
 func _ready():
 	pass
 
 func _physics_process(delta):
-	_attack()
+	_atack()
 	var axis = get_input_axis()
 	if axis == Vector2.ZERO:
 		apply_friction(ACCELERATION * delta)
@@ -35,42 +35,42 @@ func _physics_process(delta):
 		get_tree().get_nodes_in_group("World")[0].death() # Funcion death (Morir)
 
 # Ataque
-func _attack():
-	if(Input.is_action_pressed("shoot_up") && !is_attack):
-		attackUpInstance = attackUpLoad.instance()
-		add_child(attackUpInstance)
-		is_attack = true
-		$Img.animation = "Attack_Up"
+func _atack():
+	if(Input.is_action_pressed("shoot_up") && !is_atack):
+		atackUpInstance = atackUpLoad.instance()
+		add_child(atackUpInstance)
+		is_atack = true
+		$Img.animation = "Atack_Up"
 		$Img.frame = 0
-		attack_up = true
+		atack_up = true
 	
-	if(Input.is_action_pressed("shoot_down") && !is_attack):
-		attackDownInstance = attackDownLoad.instance()
-		add_child(attackDownInstance)
-		is_attack = true
-		$Img.animation = "Attack_Down"
+	if(Input.is_action_pressed("shoot_down") && !is_atack):
+		atackDownInstance = atackDownLoad.instance()
+		add_child(atackDownInstance)
+		is_atack = true
+		$Img.animation = "Atack_Down"
 		$Img.frame = 0
-		attack_down = true
+		atack_down = true
 	
-	if(Input.is_action_pressed("shoot_left") && !is_attack):
+	if(Input.is_action_pressed("shoot_left") && !is_atack):
 		$Img.flip_h = false
-		attackLeftInstance = attackLeftLoad.instance()
-		attackLeftInstance.set_direction($Img.flip_h)
-		add_child(attackLeftInstance)
-		is_attack = true
-		$Img.animation = "Attack_Left"
+		atackLeftInstance = atackLeftLoad.instance()
+		atackLeftInstance.set_direction($Img.flip_h)
+		add_child(atackLeftInstance)
+		is_atack = true
+		$Img.animation = "Atack_Left"
 		$Img.frame = 0
-		attack_left = true
+		atack_left = true
 	
-	if(Input.is_action_pressed("shoot_right") && !is_attack):
+	if(Input.is_action_pressed("shoot_right") && !is_atack):
 		$Img.flip_h = true
-		attackLeftInstance = attackLeftLoad.instance()
-		attackLeftInstance.set_direction($Img.flip_h)
-		add_child(attackLeftInstance)
-		is_attack = true
-		$Img.animation = "Attack_Left"
+		atackLeftInstance = atackLeftLoad.instance()
+		atackLeftInstance.set_direction($Img.flip_h)
+		add_child(atackLeftInstance)
+		is_atack = true
+		$Img.animation = "Atack_Left"
 		$Img.frame = 0
-		attack_left = true
+		atack_left = true
 
 # Movimiento
 func get_input_axis():
@@ -78,21 +78,21 @@ func get_input_axis():
 	#axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	#axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	
-	if(Input.is_action_pressed("ui_right") && !is_attack):
+	if(Input.is_action_pressed("ui_right") && !is_atack):
 		axis.x = 1
 		$Img.flip_h = true
 		$Img.animation = "Left"
-	if(Input.is_action_pressed("ui_left") && !is_attack):
+	if(Input.is_action_pressed("ui_left") && !is_atack):
 		axis.x = -1
 		$Img.flip_h = false
 		$Img.animation = "Left"
-	if(Input.is_action_pressed("ui_down") && !is_attack):
+	if(Input.is_action_pressed("ui_down") && !is_atack):
 		axis.y = 1
 		$Img.animation = "Down"
-	if(Input.is_action_pressed("ui_up") && !is_attack):
+	if(Input.is_action_pressed("ui_up") && !is_atack):
 		axis.y = -1
 		$Img.animation = "Up"
-	if(axis.length() == 0 && !is_attack):
+	if(axis.length() == 0 && !is_atack):
 		$Img.animation = "Down"
 	if(axis.length() > 0):
 		$Img.play()
@@ -114,17 +114,17 @@ func apply_movement(acceleration):
 
 
 func _on_Img_animation_finished():
-	if(is_attack):
-		if(attack_up):
-			attackUpInstance.finish()
-			attack_up = false
-		if(attack_down):
-			attackDownInstance.finish()
-			attack_down = false
-		if(attack_left):
-			attackLeftInstance.finish()
-			attack_left = false
-		is_attack = false
+	if(is_atack):
+		if(atack_up):
+			atackUpInstance.finish()
+			atack_up = false
+		if(atack_down):
+			atackDownInstance.finish()
+			atack_down = false
+		if(atack_left):
+			atackLeftInstance.finish()
+			atack_left = false
+		is_atack = false
 
 
 func _on_AreaPlayer_area_entered(area):
