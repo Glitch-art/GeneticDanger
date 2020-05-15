@@ -3,7 +3,12 @@ extends CanvasLayer
 export (int) var salud = 100
 export (int) var puntos = 0
 export (int) var tiempo = 0
+export (int) var dificultad = 1
 export (bool) var llevaPersona = false
+#Puntos necesarios para subir de dificultad
+export (int) var puntosDificultad = 50 
+#El porcentaje con el que va aumentando los puntos necesarios para subir de dificultad
+export (int) var porcentajeDificultadAumento = 0.1	# 10%
 
 func _ready():
 	update_life()
@@ -11,10 +16,14 @@ func _ready():
 	update_time()
 	update_imagePerson()
 	pass
-	
+
 func process(delta):
-	pass
+	#Sistema de nivel de dificultad, dependiendo de la puntuación.
+	if (puntos > puntosDificultad) and (puntos > 0):
+		dificultad += 1
+		puntosDificultad += puntosDificultad + (porcentajeDificultadAumento * puntosDificultad)
 	
+
 func update_life():
 	$UI/vida/barra/contador/fondo/numero.text = str(salud)
 	$UI/vida/barra/medidor.value = salud
@@ -36,6 +45,7 @@ func update_imagePerson():
 func _on_Timer_timeout():
 	tiempo +=1
 	update_time()
+	
 	pass
 
 

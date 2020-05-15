@@ -3,12 +3,15 @@ extends Area2D
 var rng = RandomNumberGenerator.new()
 
 export (PackedScene) var Enemy
+export (PackedScene) var Person
 
 func _ready():
+	var numChunks = get_tree().get_nodes_in_group("Chunk_group").size()
+	print(numChunks)
 	pass
 
 func _on_TimerChunk_timeout():
-	var num = 10 #dificultad = 4
+	var num = 6 #dificultad = 6
 #	yield(get_tree().create_timer(5.0), "timeout")
 	print ("Dificultad = " + str(num))
 	_random_Enemies(num)
@@ -35,7 +38,7 @@ func createEnemy(numSpawn:String):
 	#instanciar el nuevo enemigo
 	var newEnemy = Enemy.instance()
 	# Obtener nodos en el grupo "World"  ...  Añadirle al grupo "World" el newEnemigo
-	get_tree().get_nodes_in_group("navegacion")[0].add_child(newEnemy)
+	get_tree().get_nodes_in_group("World")[0].add_child(newEnemy)
 	#Establecer posicion
 	newEnemy.global_position = get_node("Shape/SpawnEnemy" + numSpawn).global_position
 	

@@ -5,7 +5,7 @@
 [ext_resource path="res://Chunk.tscn" type="PackedScene" id=3]
 
 [node name="Navegacion" type="Navigation2D" groups=[
-"navegacion",
+"Navigation_group",
 ]]
 script = ExtResource( 2 )
 
@@ -20,3 +20,9 @@ position = Vector2( 512, 768 )
 
 [node name="Chunk2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2048, 768 )
+
+[node name="Chunk3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 1792 )
+
+[node name="Chunk4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2048, 1792 )
