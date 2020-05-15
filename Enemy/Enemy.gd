@@ -4,6 +4,9 @@ var axis
 var player = load("res://Player.tscn")
 var player_instance
 var player_posicion
+var vidas = 3
+var tiempo = false
+
 #var velocidad = 150
 #var path = []
 #var navegacion = get_parent().get_parent().get_node("Navegacion")
@@ -61,5 +64,13 @@ func death():
 
 
 func _on_AreaEnemy_area_entered(area):
-	if(area.get_name() == "AtackDown"):
-		queue_free()
+	if(area.get_name() == "AtackDown" || area.get_name() == "AtackLeft" || area.get_name() == "AtackUp"):
+		if(!tiempo):
+			if(vidas <= 0):
+				queue_free()
+			vidas -= 1
+			tiempo = true
+			yield(get_tree().create_timer(0.0),"timeout")
+			tiempo = false
+			
+	

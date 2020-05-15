@@ -38,6 +38,7 @@ height = 205.953
 [node name="Enemy" type="KinematicBody2D" groups=[
 "Enemy_group",
 ]]
+scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
