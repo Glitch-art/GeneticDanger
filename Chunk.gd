@@ -43,6 +43,7 @@ func createEnemy(numSpawn:String):
 	newEnemy.global_position = get_node("Shape/SpawnEnemy" + numSpawn).global_position
 	
 func createPerson():
+	
 	pass
 
 #func 
