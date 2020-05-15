@@ -1,4 +1,5 @@
 # GeneticDanger
 Un videojuego 2D para smartphones creado en Godot.
-Jijueputa
-ttttt
+Autores:
+Andres Felipe Carranza Ruiz
+Manuel Alejandro Comezaña Quintero

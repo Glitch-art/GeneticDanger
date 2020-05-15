@@ -1,39 +1,41 @@
 extends Area2D
 
+# Un chunk puede generar de 0 a 3 enemigos, y/o una persona.
+
 var rng = RandomNumberGenerator.new()
 
 export (PackedScene) var Enemy
 export (PackedScene) var Person
+export (int) var difficulty = 4
+var numChunks
 
+# Detecta el numero de Chunks existentes
 func _ready():
-	var numChunks = get_tree().get_nodes_in_group("Chunk_group").size()
+	numChunks = get_tree().get_nodes_in_group("Chunk_group").size()
 	print(numChunks)
 	pass
 
+# Cada cierto tiempo se activaran los Chunks
 func _on_TimerChunk_timeout():
-	var num = 6 #dificultad = 6
-#	yield(get_tree().create_timer(5.0), "timeout")
-	print ("Dificultad = " + str(num))
-	_random_Enemies(num)
-	print ("------------------------------------------")
+	_random_Enemies(difficulty)
+
+# Genera un numero aleatorio(Numero de enemigos), dependiendo de la dificultad
+func _random_Enemies(difficulty:int): # dificultad (0-10)
+	rng.randomize()
+	var rangoFinal = (difficulty*0.24)+1	# (1-3.4)
+	#Probabilidad de espawneo es de 0 a 3 enemigos
+	var numRandom = rng.randi_range(0,rangoFinal) 
+	if numRandom > 0:
+		_activate_Spawns_Enemies(numRandom)
 	pass
-	
+
+# Reparte los enemigos por los tres spawnEnemy
 func _activate_Spawns_Enemies(numEnemigos:int):
 	for i in range(numEnemigos+1):
 		if i > 0:
 			createEnemy(str(i))
 
-func _random_Enemies(difficulty): # dificultad (0-10)
-	rng.randomize()
-	var rangoFinal = (difficulty*0.24)+1	# (1-3.4)
-	#Probabilidad de espawneo es de 0 a 3 enemigos
-	var numRandom = rng.randi_range(0,rangoFinal) 
-	print ("Numero de enemigos spawneados = " + str(numRandom))
-	if numRandom > 0:
-		_activate_Spawns_Enemies(numRandom)
-	pass
-
-
+# Crea los enemigos en los Spawn
 func createEnemy(numSpawn:String):
 	#instanciar el nuevo enemigo
 	var newEnemy = Enemy.instance()
