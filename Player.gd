@@ -88,14 +88,14 @@ func get_input_axis():
 		axis.x = -1
 		$Img.flip_h = false
 		$Img.animation = "Left"
-	
 	if(Input.is_action_pressed("ui_down") && !is_atack):
 		axis.y = 1
 		$Img.animation = "Down"
 	if(Input.is_action_pressed("ui_up") && !is_atack):
 		axis.y = -1
 		$Img.animation = "Up"
-		
+	if(axis.length() == 0 && !is_atack):
+		$Img.animation = "Down"
 	if(axis.length() > 0):
 		$Img.play()
 		axis.normalized()

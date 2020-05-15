@@ -4,35 +4,35 @@
 [ext_resource path="res://Person.gd" type="Script" id=2]
 [ext_resource path="res://Sprites Personajes/Sprites Personajes.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 1800, 450, 450 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 450, 1800, 450, 450 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 900, 1800, 450, 450 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1350, 1800, 450, 450 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 7.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24, 24 )
 
 [node name="Person" type="KinematicBody2D" groups=[
@@ -45,8 +45,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.4, 0.4 )
-frames = SubResource( 6 )
-frame = 2
+frames = SubResource( 5 )
+frame = 1
 playing = true
 
 [node name="SpritePerson" type="Sprite" parent="."]
@@ -60,7 +60,7 @@ frame = 85
 [node name="AreaPerson" type="Area2D" parent="."]
 
 [node name="CollisionPerson" type="CollisionShape2D" parent="AreaPerson"]
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 6.0
