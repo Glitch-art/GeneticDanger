@@ -10,14 +10,14 @@ func _ready():
 	var newNavegacion = Navegacion.instance()
 	add_child(newNavegacion)
 	
+	# Añadir GUI
+	var newGUI = GUI.instance()
+	add_child(newGUI)
+	
 	# Añadir Jugador
 	var newPlayer = Player.instance()
 	add_child(newPlayer)
 	newPlayer.global_position = get_tree().get_nodes_in_group("SpawnPlayer_group")[0].global_position
-	
-	# Añadir GUI
-	var newGUI = GUI.instance()
-	add_child(newGUI)
 	
 	# Crear Person (instanciar la escena Person.tscn)
 	var newPerson = Person.instance()

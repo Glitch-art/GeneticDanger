@@ -3,6 +3,11 @@
 [ext_resource path="res://Enemy/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Sprites Personajes/Sprites Personajes.png" type="Texture" id=2]
 
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1350, 2250, 450, 450 )
+
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 2 )
@@ -18,14 +23,9 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 900, 2250, 450, 450 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1350, 2250, 450, 450 )
-
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 4 ), SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 2 ), SubResource( 1 ) ],
 "loop": true,
 "name": "Run",
 "speed": 7.0
@@ -48,6 +48,7 @@ __meta__ = {
 position = Vector2( -8.35092, -156.997 )
 frames = SubResource( 5 )
 animation = "Run"
+frame = 1
 playing = true
 
 [node name="AreaEnemy" type="Area2D" parent="." groups=[

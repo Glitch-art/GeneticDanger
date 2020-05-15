@@ -22,17 +22,16 @@ func process(delta):
 	if (puntos > puntosDificultad) and (puntos > 0):
 		dificultad += 1
 		puntosDificultad += puntosDificultad + (porcentajeDificultadAumento * puntosDificultad)
-	
 
 func update_life():
 	$UI/vida/barra/contador/fondo/numero.text = str(salud)
 	$UI/vida/barra/medidor.value = salud
 	pass
-	
+
 func update_score():
 	$Score.text = str(puntos)
 	pass
-	
+
 func update_time():
 	$Time.text = str(tiempo)
 	pass
@@ -41,11 +40,10 @@ func update_imagePerson():
 	$Persona.visible = llevaPersona
 	pass
 
-
 func _on_Timer_timeout():
 	tiempo +=1
 	update_time()
-	
+
 	pass
 
 

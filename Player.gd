@@ -1,22 +1,28 @@
 extends KinematicBody2D
 
+onready var GUI = get_tree().get_nodes_in_group("GUI")[0]
+export (PackedScene) var attackUpLoad
+var attackUpInstance
+export (PackedScene) var attackDownLoad
+var attackDownInstance
+export (PackedScene) var attackLeftLoad
+var attackLeftInstance
+
 var MAX_SPEED = 500
 var ACCELERATION = 2000
 var motion = Vector2()
-var atackUpLoad = load("res://Arma/AtackUp.tscn")
-var atackUpInstance
-var atackDownLoad = load("res://Arma/AtackDown.tscn")
-var atackDownInstance
-var atackLeftLoad = load("res://Arma/AtackLeft.tscn")
-var atackLeftInstance
-var is_atack = false
-var atack_up = false
-var atack_down = false
-var atack_left = false
 
+var is_attack = false
+var attack_up = false
+var attack_down = false
+var attack_left = false
+var time = false
+
+func _ready():
+	pass
 
 func _physics_process(delta):
-	_atack()
+	_attack()
 	var axis = get_input_axis()
 	if axis == Vector2.ZERO:
 		apply_friction(ACCELERATION * delta)
@@ -24,55 +30,47 @@ func _physics_process(delta):
 		apply_movement(axis * ACCELERATION * delta)
 	motion = move_and_slide(motion)
 	
-	
-	#Interactuar colisionando con objetos
-	if get_slide_collision(get_slide_count() -1) != null:
-		var obj_colisionado = get_slide_collision(get_slide_count() -1).collider
-		if obj_colisionado.is_in_group("Bottle_group"):
-			# Proceso
-			obj_colisionado.get_node("Sprite_Bottle").frame_coords = Vector2(0,9)
-	
 	#Muerte por oprimir M   (Temporal)...
 	if Input.is_action_just_pressed("Tecla_Morir"):
 		get_tree().get_nodes_in_group("World")[0].death() # Funcion death (Morir)
 
-# Atacke
-func _atack():
-	if(Input.is_action_pressed("shoot_up") && !is_atack):
-		atackUpInstance = atackUpLoad.instance()
-		add_child(atackUpInstance)
-		is_atack = true
-		$Img.animation = "Atack_Up"
+# Ataque
+func _attack():
+	if(Input.is_action_pressed("shoot_up") && !is_attack):
+		attackUpInstance = attackUpLoad.instance()
+		add_child(attackUpInstance)
+		is_attack = true
+		$Img.animation = "Attack_Up"
 		$Img.frame = 0
-		atack_up = true
+		attack_up = true
 	
-	if(Input.is_action_pressed("shoot_down") && !is_atack):
-		atackDownInstance = atackDownLoad.instance()
-		add_child(atackDownInstance)
-		is_atack = true
-		$Img.animation = "Atack_Down"
+	if(Input.is_action_pressed("shoot_down") && !is_attack):
+		attackDownInstance = attackDownLoad.instance()
+		add_child(attackDownInstance)
+		is_attack = true
+		$Img.animation = "Attack_Down"
 		$Img.frame = 0
-		atack_down = true
+		attack_down = true
 	
-	if(Input.is_action_pressed("shoot_left") && !is_atack):
+	if(Input.is_action_pressed("shoot_left") && !is_attack):
 		$Img.flip_h = false
-		atackLeftInstance = atackLeftLoad.instance()
-		atackLeftInstance.set_direction($Img.flip_h)
-		add_child(atackLeftInstance)
-		is_atack = true
-		$Img.animation = "Atack_Left"
+		attackLeftInstance = attackLeftLoad.instance()
+		attackLeftInstance.set_direction($Img.flip_h)
+		add_child(attackLeftInstance)
+		is_attack = true
+		$Img.animation = "Attack_Left"
 		$Img.frame = 0
-		atack_left = true
+		attack_left = true
 	
-	if(Input.is_action_pressed("shoot_right") && !is_atack):
+	if(Input.is_action_pressed("shoot_right") && !is_attack):
 		$Img.flip_h = true
-		atackLeftInstance = atackLeftLoad.instance()
-		atackLeftInstance.set_direction($Img.flip_h)
-		add_child(atackLeftInstance)
-		is_atack = true
-		$Img.animation = "Atack_Left"
+		attackLeftInstance = attackLeftLoad.instance()
+		attackLeftInstance.set_direction($Img.flip_h)
+		add_child(attackLeftInstance)
+		is_attack = true
+		$Img.animation = "Attack_Left"
 		$Img.frame = 0
-		atack_left = true
+		attack_left = true
 
 # Movimiento
 func get_input_axis():
@@ -80,21 +78,21 @@ func get_input_axis():
 	#axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	#axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	
-	if(Input.is_action_pressed("ui_right") && !is_atack):
+	if(Input.is_action_pressed("ui_right") && !is_attack):
 		axis.x = 1
 		$Img.flip_h = true
 		$Img.animation = "Left"
-	if(Input.is_action_pressed("ui_left") && !is_atack):
+	if(Input.is_action_pressed("ui_left") && !is_attack):
 		axis.x = -1
 		$Img.flip_h = false
 		$Img.animation = "Left"
-	if(Input.is_action_pressed("ui_down") && !is_atack):
+	if(Input.is_action_pressed("ui_down") && !is_attack):
 		axis.y = 1
 		$Img.animation = "Down"
-	if(Input.is_action_pressed("ui_up") && !is_atack):
+	if(Input.is_action_pressed("ui_up") && !is_attack):
 		axis.y = -1
 		$Img.animation = "Up"
-	if(axis.length() == 0 && !is_atack):
+	if(axis.length() == 0 && !is_attack):
 		$Img.animation = "Down"
 	if(axis.length() > 0):
 		$Img.play()
@@ -115,20 +113,29 @@ func apply_movement(acceleration):
 	motion = motion.clamped(MAX_SPEED)
 
 
-
-
-
-
-
 func _on_Img_animation_finished():
-	if(is_atack):
-		if(atack_up):
-			atackUpInstance.finish()
-			atack_up = false
-		if(atack_down):
-			atackDownInstance.finish()
-			atack_down = false
-		if(atack_left):
-			atackLeftInstance.finish()
-			atack_left = false
-		is_atack = false
+	if(is_attack):
+		if(attack_up):
+			attackUpInstance.finish()
+			attack_up = false
+		if(attack_down):
+			attackDownInstance.finish()
+			attack_down = false
+		if(attack_left):
+			attackLeftInstance.finish()
+			attack_left = false
+		is_attack = false
+
+
+func _on_AreaPlayer_area_entered(area):
+	if(area.get_name() == "AreaEnemy"):
+		if(!time):
+			if(GUI.salud <= 0):
+				get_tree().get_nodes_in_group("World")[0].death()
+			GUI.salud -= 10
+			GUI.update_life()
+			print("Salud Jugador = " + str(GUI.salud))
+			time = true
+			yield(get_tree().create_timer(1.0),"timeout")
+			time = false
+	pass # Replace with function body.
