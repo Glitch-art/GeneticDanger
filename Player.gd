@@ -97,8 +97,8 @@ func get_input_axis():
 	if(axis.length() > 0):
 		$Img.play()
 		axis.normalized()
-	else:
-		$Img.stop()
+#	else:
+#		$Img.stop()
 	return axis.normalized()
 	
 
