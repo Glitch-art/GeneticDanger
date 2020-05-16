@@ -1,6 +1,5 @@
 [gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://Game-Over.png" type="Texture" id=1]
 [ext_resource path="res://Gameover.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/AdobeDevanagari-Bold.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Virus/Virus-14.png" type="Texture" id=5]
@@ -64,6 +63,10 @@ animations = [ {
 "speed": 29.0
 } ]
 
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/Game-Over.png-2e9a07dc8c380787f072b7648d6059e3.stex"
+
 [node name="Gameover" type="Node"]
 script = ExtResource( 2 )
 
@@ -97,13 +100,13 @@ __meta__ = {
 position = Vector2( -757, -336 )
 scale = Vector2( 0.613333, 0.613333 )
 frames = SubResource( 4 )
-frame = 13
+frame = 7
 playing = true
 
 [node name="Wallpaper" type="Sprite" parent="."]
 visible = false
 scale = Vector2( 1.0234, 1.00741 )
-texture = ExtResource( 1 )
+texture = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="Wallpaper"]
 wait_time = 3.0

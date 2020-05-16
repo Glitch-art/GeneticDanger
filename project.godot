@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Genetic Danger"
 run/main_scene="res://World.tscn"
-config/icon="res://icon_virus.png"
+config/icon="res://icono.png"
 
 [autoload]
 
