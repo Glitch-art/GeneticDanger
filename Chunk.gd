@@ -1,7 +1,6 @@
 extends Area2D
 
 # Un chunk puede generar de 0 a 3 enemigos, y/o una persona.
-
 var rng = RandomNumberGenerator.new()
 
 export (PackedScene) var Enemy
@@ -44,8 +43,13 @@ func createEnemy(numSpawn:String):
 	#Establecer posicion
 	newEnemy.global_position = get_node("Shape/SpawnEnemy" + numSpawn).global_position
 	
+var red = 0
+var blue = 0
+var green = 0
+
 func createPerson():
-	
+	while(true):
+		$ShapeCasa/SpriteCasa.draw_texture(Color(red,green,blue,0.27))
 	pass
 
 #func 

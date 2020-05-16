@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Chunk.gd" type="Script" id=1]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Person.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Gradiente/1.png" type="Texture" id=5]
+[ext_resource path="res://Gradiente/2.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 608, 128 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 512, 128 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
 
 [node name="Chunk" type="Area2D" groups=[
 "Chunk_group",
@@ -39,4 +52,22 @@ position = Vector2( 72, -64 )
 [node name="TimerChunk" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="Casa" type="Area2D" parent="."]
+position = Vector2( 1, 0 )
+
+[node name="ShapeCasa" type="CollisionShape2D" parent="Casa"]
+position = Vector2( 0, -128 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Casa"]
+modulate = Color( 1, 1, 1, 0.168627 )
+position = Vector2( 0, -192 )
+scale = Vector2( 8, 5.33333 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1, 0 )
+current = true
 [connection signal="timeout" from="TimerChunk" to="." method="_on_TimerChunk_timeout"]
