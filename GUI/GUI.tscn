@@ -290,6 +290,6 @@ autostart = true
 ]]
 position = Vector2( 1856, 192 )
 frames = SubResource( 13 )
-frame = 3
+frame = 5
 playing = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
