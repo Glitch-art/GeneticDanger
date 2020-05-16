@@ -232,7 +232,7 @@ margin_left = 124.0
 margin_right = 520.0
 margin_bottom = 65.0
 size_flags_vertical = 3
-value = 30.0
+value = 100.0
 texture_under = ExtResource( 5 )
 texture_progress = ExtResource( 4 )
 
@@ -260,7 +260,7 @@ margin_bottom = 88.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "1234567890"
+text = "420281"
 align = 1
 valign = 1
 __meta__ = {
@@ -290,6 +290,6 @@ autostart = true
 ]]
 position = Vector2( 1856, 192 )
 frames = SubResource( 13 )
-frame = 3
+frame = 2
 playing = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

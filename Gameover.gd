@@ -10,7 +10,7 @@ func _ready():
 		2:"Si tienes síntomas de resfriado, quédate en casa y usa tapabocas.",
 		3:"Limpia y desinfecta los objetos y las superficies que se tocan frecuentemente.",
 		4:"Recuerda usar un antibacterial que tenga un 70% o más de alcohol.",
-		5:"Mantente actualizado, informate del coronavirus.",
+		5:"Mantente actualizado, infórmate del coronavirus.",
 		6:"Recuerda lavar tus prendas de vestir al llegar a casa.",
 		7:"Sal en los días designados, sólo si es necesario.",
 		}
