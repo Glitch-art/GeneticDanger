@@ -58,6 +58,10 @@ animations = [ {
 "speed": 29.0
 } ]
 
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/Game-Over.png-2e9a07dc8c380787f072b7648d6059e3.stex"
+
 [node name="Gameover" type="Node"]
 script = ExtResource( 2 )
 
