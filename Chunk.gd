@@ -66,12 +66,13 @@ func desactivarCasa():
 	get_tree().get_nodes_in_group("Navigation_group")[0].createFirstPeople()
 	pass
 
+# Persona llevada a casa
 func _on_Casa_area_entered(area):
 	if area.get_name() == "AreaPlayer":
-		get_tree().get_nodes_in_group("GUI")[0].llevaPersona = false
-		get_tree().get_nodes_in_group("GUI")[0].update_imagePerson()
-		get_tree().get_nodes_in_group("GUI")[0].personasEnCasa += 1
-		get_tree().get_nodes_in_group("GUI")[0].update_PeopleAtHome()
+		var GUI = get_tree().get_nodes_in_group("GUI")[0]
+		GUI.update_PeopleAtHome()
+		GUI.addPoints(30)
+		
 		desactivarCasa()
 		pass
 	pass # Replace with function body.

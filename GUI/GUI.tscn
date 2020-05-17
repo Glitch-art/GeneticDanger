@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Flechas.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/CANDARAB.TTF" type="DynamicFontData" id=2]
@@ -70,6 +70,13 @@ animations = [ {
 "name": "default",
 "speed": 12.0
 } ]
+
+[sub_resource type="DynamicFont" id=14]
+size = 51
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
 
 [node name="GUI" type="CanvasLayer" groups=[
 "GUI",
@@ -291,7 +298,7 @@ autostart = true
 position = Vector2( 1872, 272 )
 scale = Vector2( 1.14, 1.14 )
 frames = SubResource( 13 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="PeopleAtHome" type="Label" parent="."]
@@ -302,6 +309,31 @@ margin_bottom = 198.0
 custom_fonts/font = SubResource( 8 )
 text = "32"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PointsAdded" type="Label" parent="."]
+margin_left = 800.0
+margin_top = 96.0
+margin_right = 1120.0
+margin_bottom = 208.0
+custom_fonts/font = SubResource( 7 )
+text = "+5"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="."]
+margin_left = 80.0
+margin_top = 176.0
+margin_right = 1872.0
+margin_bottom = 496.0
+custom_fonts/font = SubResource( 14 )
+text = "Mensaje"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -6,6 +6,8 @@ export (PackedScene) var Person
 export (PackedScene) var GUI
 
 func _ready():
+	#OS.get_user_data_dir()
+	
 	# Añadir Navegación
 	var newNavegacion = Navegacion.instance()
 	add_child(newNavegacion)
@@ -25,8 +27,15 @@ func _ready():
 	newPerson.global_position = Vector2(200,1200)
 
 func death():
+	# Guardar datos
+	Persistence.data["PuntajeMaximo"] = GUI.maxPoints
+	Persistence.save_data()
+	
+	
 	# Cambiar escena Fin del Juego
 	get_tree().change_scene("res://Gameover.tscn")
+	#Persistence.save_data()
+	
 	
 #	# Opcion 1: Teletrasportar el jugador
 ##	get_tree().get_nodes_in_group("Player_group")[0].global_position = get_tree().get_nodes_in_group("SpawnPlayer_group")[0].global_position

@@ -48,7 +48,7 @@ __meta__ = {
 position = Vector2( -8.35092, -156.997 )
 frames = SubResource( 5 )
 animation = "Run"
-frame = 2
+frame = 1
 playing = true
 
 [node name="AreaEnemy" type="Area2D" parent="." groups=[

@@ -8,6 +8,7 @@ func _ready():
 	pass # Replace with function body.
 
 func death():
+	get_tree().get_nodes_in_group("GUI")[0].addPoints(5)
 	queue_free()
 	pass
 
