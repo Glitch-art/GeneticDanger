@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://TouchScreenButton.gd" type="Script" id=1]
+[ext_resource path="res://Inicio/Inicio.png" type="Texture" id=2]
+[ext_resource path="res://Inicio/Boton.png" type="Texture" id=3]
+[ext_resource path="res://transparente.tres" type="Texture" id=4]
+[ext_resource path="res://Fonts/DUBAI-BOLD.TTF" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 77
+font_data = ExtResource( 5 )
+
+[node name="Inicio" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( 568.226, 49.2509 )
+scale = Vector2( -366.923, 371.706 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 3 )
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -920.0
+margin_top = 386.0
+margin_right = -571.0
+margin_bottom = 517.0
+custom_fonts/font = SubResource( 1 )
+text = "240"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_TouchScreenButton_pressed"]

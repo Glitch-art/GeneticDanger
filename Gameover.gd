@@ -3,6 +3,8 @@ extends Node
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	$Salir.visible = false
+	$ImgSalir.visible = false
 	$Wallpaper.visible = true
 	var frases = {
 		0:"Al estornudar, cúbrete con la parte interna del codo.",
@@ -14,10 +16,16 @@ func _ready():
 		6:"Recuerda lavar tus prendas de vestir al llegar a casa.",
 		7:"Sal en los días designados, sólo si es necesario.",
 		}
-	rng.randomize()
 	var num_random = rng.randi_range(0,frases.size()-1)
 	$Etiqueta.set_text(frases[num_random])
+	yield(get_tree().create_timer(7.0),"timeout")
+	$Salir.visible = true
+	$ImgSalir.visible = true
 	pass
 
 func _on_Timer_timeout():
 	$Wallpaper.visible = false
+
+
+func _on_Salir_pressed():
+	get_tree().change_scene("res://Inicio/Inicio.tscn")

@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Navegacion/Navegacion.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/TileSet/TileSet.tres" type="TileSet" id=4]
-[ext_resource path="res://Fonts/pingwing.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://MaxPoints.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Person.tscn" type="PackedScene" id=9]
 
@@ -66,7 +66,6 @@ tile_data = PoolIntArray( 262148, -1610612735, 0, 262149, -1610612735, 0, 262150
 ]]
 position = Vector2( 1034, 922 )
 
-[node name="MaxPoints" type="Label" parent="."]
 margin_left = 384.0
 margin_top = 912.0
 margin_right = 1392.0
