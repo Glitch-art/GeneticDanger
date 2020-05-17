@@ -24,6 +24,6 @@ func _on_AreaPerson_area_entered(area):
 	if area.get_name() == "AreaPlayer":
 		GUI.llevaPersona = true
 		GUI.update_imagePerson()
-		
+		get_tree().get_nodes_in_group("Navigation_group")[0].buscarCasa()
 		queue_free()
 	pass # Replace with function body.

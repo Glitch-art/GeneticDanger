@@ -60,14 +60,11 @@ position = Vector2( 1, 0 )
 position = Vector2( 0, -128 )
 shape = SubResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Casa"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.168627 )
-position = Vector2( 0, -192 )
+position = Vector2( 1, -192 )
 scale = Vector2( 8, 5.33333 )
 frames = SubResource( 3 )
 playing = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 1, 0 )
-current = true
 [connection signal="timeout" from="TimerChunk" to="." method="_on_TimerChunk_timeout"]
+[connection signal="area_entered" from="Casa" to="." method="_on_Casa_area_entered"]

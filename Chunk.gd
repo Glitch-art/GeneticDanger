@@ -10,8 +10,10 @@ var numChunks
 
 # Detecta el numero de Chunks existentes
 func _ready():
+	self.visible = false
+	$Casa.monitoring = false
 	numChunks = get_tree().get_nodes_in_group("Chunk_group").size()
-	print(numChunks)
+	#print(numChunks)
 	pass
 
 # Cada cierto tiempo se activaran los Chunks
@@ -43,15 +45,39 @@ func createEnemy(numSpawn:String):
 	#Establecer posicion
 	newEnemy.global_position = get_node("Shape/SpawnEnemy" + numSpawn).global_position
 	
-var red = 0
-var blue = 0
-var green = 0
 
 func createPerson():
-	while(true):
-		$ShapeCasa/SpriteCasa.draw_texture(Color(red,green,blue,0.27))
+	#instanciar el nuevo enemigo
+	var newPerson = Person.instance()
+	# Obtener nodos en el grupo "World"  ...  Añadirle al grupo "World" el newEnemigo
+	get_tree().get_nodes_in_group("World")[0].add_child(newPerson)
+	#Establecer posicion
+	newPerson.global_position = get_node("Shape/SpawnPerson").global_position
 	pass
 
+func activarCasa():
+	self.visible = true
+	$Casa.monitoring = true
+	pass
+	
+func desactivarCasa():
+	self.visible = false
+	$Casa.monitoring = false
+	get_tree().get_nodes_in_group("Navigation_group")[0].createFirstPeople()
+	pass
+
+func _on_Casa_area_entered(area):
+	if area.get_name() == "AreaPlayer":
+		get_tree().get_nodes_in_group("GUI")[0].llevaPersona = false
+		get_tree().get_nodes_in_group("GUI")[0].update_imagePerson()
+		get_tree().get_nodes_in_group("GUI")[0].personasEnCasa += 1
+		get_tree().get_nodes_in_group("GUI")[0].update_PeopleAtHome()
+		desactivarCasa()
+		pass
+	pass # Replace with function body.
+
+	
+	
 #func 
 #
 #const numChunks = 16
@@ -61,4 +87,5 @@ func createPerson():
 #	while (chunkSeleccionado != ChunkconPersona)
 #		Buscar otro chunk aleatorio
 #	poner persona en = chunkSeleccionado.position
+
 

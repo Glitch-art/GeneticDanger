@@ -5,16 +5,20 @@ export (int) var puntos = 0
 export (int) var tiempo = 0
 export (int) var dificultad = 1
 export (bool) var llevaPersona = false
+export (int) var personasEnCasa = 0
 #Puntos necesarios para subir de dificultad
 export (int) var puntosDificultad = 50 
 #El porcentaje con el que va aumentando los puntos necesarios para subir de dificultad
 export (int) var porcentajeDificultadAumento = 0.1	# 10%
+
+signal noLlevaPersona
 
 func _ready():
 	update_life()
 	update_score()
 	update_time()
 	update_imagePerson()
+	update_PeopleAtHome()
 	pass
 
 func process(delta):
@@ -38,6 +42,12 @@ func update_time():
 
 func update_imagePerson():
 	$Persona.visible = llevaPersona
+	if ($Persona.visible == false):
+		get_tree().get_nodes_in_group("Navigation_group")[0].createFirstPeople()
+	pass
+
+func update_PeopleAtHome():
+	$PeopleAtHome.text = str(personasEnCasa)
 	pass
 
 func _on_Timer_timeout():

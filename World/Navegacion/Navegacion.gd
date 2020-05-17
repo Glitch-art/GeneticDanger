@@ -1,7 +1,46 @@
 extends Navigation2D
 
+var rng = RandomNumberGenerator.new()
+
 var velocidad = 150
 var path = []
+var numChunks
+var personasIniciales = 1
+var ChunkActivado
+
+# Detecta el numero de Chunks existentes
+func _ready():
+	numChunks = get_tree().get_nodes_in_group("Chunk_group").size()
+	#createFirstPeople()
+	print(numChunks)
+	pass
+
+func createFirstPeople():
+	for i in range(personasIniciales):
+		var numRandom = rng.randi() % numChunks
+		get_tree().get_nodes_in_group("Chunk_group")[numRandom].createPerson()
+		pass
+	pass
+
+func buscarCasa():
+	var numRandom = rng.randi() % numChunks
+	get_tree().get_nodes_in_group("Chunk_group")[numRandom].activarCasa()
+	
+	pass
+
+#	rng.randi() % 20 			(0-19)
+
+
+#func 
+#
+#const numChunks = 16
+#
+#señal persona recogida:
+#	chunkSeleccionado = 0-15
+#	while (chunkSeleccionado != ChunkconPersona)
+#		Buscar otro chunk aleatorio
+#	poner persona en = chunkSeleccionado.position
+
 
 func _physics_process(delta):
 	if(get_tree().get_nodes_in_group("Player_group")[0]):

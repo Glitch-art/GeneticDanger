@@ -22,8 +22,7 @@ func _ready():
 	# Crear Person (instanciar la escena Person.tscn)
 	var newPerson = Person.instance()
 	add_child(newPerson)
-	newPerson.global_position = Vector2(1090,96)
-	
+	newPerson.global_position = Vector2(200,1200)
 
 func death():
 	# Cambiar escena Fin del Juego

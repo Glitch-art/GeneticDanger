@@ -154,7 +154,7 @@ pressed = ExtResource( 10 )
 action = "shoot_right"
 
 [node name="Reset" type="TouchScreenButton" parent="."]
-position = Vector2( 64, 128 )
+position = Vector2( 48, 384 )
 scale = Vector2( 63.3084, 64 )
 normal = SubResource( 2 )
 pressed = SubResource( 4 )
@@ -288,8 +288,21 @@ autostart = true
 [node name="Persona" type="AnimatedSprite" parent="." groups=[
 "GUI_Persona",
 ]]
-position = Vector2( 1856, 192 )
+position = Vector2( 1872, 272 )
+scale = Vector2( 1.14, 1.14 )
 frames = SubResource( 13 )
-frame = 5
+frame = 2
 playing = true
+
+[node name="PeopleAtHome" type="Label" parent="."]
+margin_left = 1456.0
+margin_top = 128.0
+margin_right = 1904.0
+margin_bottom = 198.0
+custom_fonts/font = SubResource( 8 )
+text = "32"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
