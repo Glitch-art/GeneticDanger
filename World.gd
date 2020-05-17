@@ -6,13 +6,13 @@ export (PackedScene) var Person
 export (PackedScene) var GUI
 
 func _ready():
-	# Añadir Navegación
-	var newNavegacion = Navegacion.instance()
-	add_child(newNavegacion)
-	
 	# Añadir GUI
 	var newGUI = GUI.instance()
 	add_child(newGUI)
+	
+	# Añadir Navegación
+	var newNavegacion = Navegacion.instance()
+	add_child(newNavegacion)
 	
 	# Añadir Jugador
 	var newPlayer = Player.instance()

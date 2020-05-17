@@ -66,6 +66,7 @@ modulate = Color( 1, 1, 1, 0.168627 )
 position = Vector2( 1, -192 )
 scale = Vector2( 8, 5.33333 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 [connection signal="timeout" from="TimerChunk" to="." method="_on_TimerChunk_timeout"]
 [connection signal="area_entered" from="Casa" to="." method="_on_Casa_area_entered"]

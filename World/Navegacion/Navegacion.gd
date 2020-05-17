@@ -10,7 +10,7 @@ var ChunkActivado
 # Detecta el numero de Chunks existentes
 func _ready():
 	numChunks = get_tree().get_nodes_in_group("Chunk_group").size()
-	#createFirstPeople()
+	createFirstPeople()
 	print(numChunks)
 	pass
 
@@ -23,6 +23,7 @@ func buscarCasa():
 	var numRandom = rng.randi() % numChunks
 	get_tree().get_nodes_in_group("Chunk_group")[numRandom].activarCasa()
 	pass
+
 
 func _physics_process(delta):
 	if(get_tree().get_nodes_in_group("Player_group")[0]):

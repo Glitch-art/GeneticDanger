@@ -50,8 +50,6 @@ func update_time():
 
 func update_imagePerson():
 	$Persona.visible = llevaPersona
-	if ($Persona.visible == false):
-		get_tree().get_nodes_in_group("Navigation_group")[0].createFirstPeople()
 	pass
 
 func update_PeopleAtHome():
