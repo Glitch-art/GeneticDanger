@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Frases.png" type="Texture" id=1]
 [ext_resource path="res://Gameover.gd" type="Script" id=2]
@@ -44,14 +44,18 @@
 [ext_resource path="res://Virus/Virus-33.png" type="Texture" id=42]
 [ext_resource path="res://Virus/Virus-28.png" type="Texture" id=43]
 [ext_resource path="res://Main/Touch.png" type="Texture" id=44]
-
+[ext_resource path="res://Fonts/DUBAI-LIGHT.TTF" type="DynamicFontData" id=45]
 
 [sub_resource type="DynamicFont" id=1]
 size = 90
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 45 )
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 17 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 8 ), ExtResource( 22 ), ExtResource( 6 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 24 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 12 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 16 ), ExtResource( 29 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 33 ) ],
 "loop": true,
@@ -59,7 +63,7 @@ animations = [ {
 "speed": 29.0
 } ]
 
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="StreamTexture" id=4]
 flags = 4
 load_path = "res://.import/Game-Over.png-2e9a07dc8c380787f072b7648d6059e3.stex"
 
@@ -92,17 +96,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="."]
+margin_left = -958.993
+margin_top = 438.633
+margin_right = -150.993
+margin_bottom = 535.633
+custom_fonts/font = SubResource( 2 )
+text = "Copyright (c) 2020 Andres Carranza, Manuel Comezaña."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -757, -336 )
 scale = Vector2( 0.613333, 0.613333 )
-frames = SubResource( 2 )
-frame = 9
+frames = SubResource( 3 )
+frame = 31
 playing = true
 
 [node name="Wallpaper" type="Sprite" parent="."]
 visible = false
 scale = Vector2( 1.0234, 1.00741 )
-texture = SubResource( 3 )
+texture = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="Wallpaper"]
 wait_time = 3.0
