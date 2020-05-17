@@ -5,7 +5,7 @@ var rng = RandomNumberGenerator.new()
 
 export (PackedScene) var Enemy
 export (PackedScene) var Person
-export (int) var difficulty = 4
+export (int) var difficulty = 0
 var numChunks
 
 # Detecta el numero de Chunks existentes
@@ -57,11 +57,13 @@ func createPerson():
 	pass
 
 func activarCasa():
+	print("Casa activada")
 	self.visible = true
 	$Casa.monitoring = true
 	pass
 	
 func desactivarCasa():
+	print("Casa desactivada")
 	self.visible = false
 	$Casa.monitoring = false
 	get_tree().get_nodes_in_group("Navigation_group")[0].createFirstPeople()
@@ -73,6 +75,6 @@ func _on_Casa_area_entered(area):
 		var GUI = get_tree().get_nodes_in_group("GUI")[0]
 		GUI.update_PeopleAtHome()
 		GUI.addPoints(30)
-		
+		print("Has llegado a casa")
 		desactivarCasa()
 	pass

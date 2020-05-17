@@ -55,6 +55,7 @@ autostart = true
 
 [node name="Casa" type="Area2D" parent="."]
 position = Vector2( 1, 0 )
+monitoring = false
 
 [node name="ShapeCasa" type="CollisionShape2D" parent="Casa"]
 position = Vector2( 0, -128 )
