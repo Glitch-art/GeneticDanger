@@ -35,6 +35,7 @@ func _activate_Spawns_Enemies(numEnemigos:int):
 	for i in range(numEnemigos+1):
 		if i > 0:
 			createEnemy(str(i))
+	pass
 
 # Crea los enemigos en los Spawn
 func createEnemy(numSpawn:String):
@@ -44,7 +45,7 @@ func createEnemy(numSpawn:String):
 	get_tree().get_nodes_in_group("World")[0].add_child(newEnemy)
 	#Establecer posicion
 	newEnemy.global_position = get_node("Shape/SpawnEnemy" + numSpawn).global_position
-	
+	pass
 
 func createPerson():
 	#instanciar el nuevo enemigo
@@ -74,19 +75,4 @@ func _on_Casa_area_entered(area):
 		GUI.addPoints(30)
 		
 		desactivarCasa()
-		pass
-	pass # Replace with function body.
-
-	
-	
-#func 
-#
-#const numChunks = 16
-#
-#señal persona recogida:
-#	chunkSeleccionado = 0-15
-#	while (chunkSeleccionado != ChunkconPersona)
-#		Buscar otro chunk aleatorio
-#	poner persona en = chunkSeleccionado.position
-
-
+	pass

@@ -15,6 +15,7 @@ var llevaPersona = false
 
 
 func _ready():
+	maxPoints = Persistence.data["PuntajeMaximo"]
 	$Message.visible = false
 	$PointsAdded.visible = false
 	update_life()
@@ -24,10 +25,11 @@ func _ready():
 	update_PeopleAtHome()
 	pass
 
-func process(delta):
+func process():
 	#Sistema de nivel de dificultad, dependiendo de la puntuación.
 	if (puntos > puntosDificultad) and (puntos > 0):
 		dificultad += 1
+		$Message.text = "Nivel " + str(dificultad)
 		puntosDificultad += puntosDificultad + (porcentajeDificultadAumento * puntosDificultad)
 
 func update_life():
@@ -39,6 +41,7 @@ func update_score():
 	$Score.text = str(puntos)
 	if puntos > maxPoints:
 		maxPoints = puntos
+		print ("Puntaje Maximo" + str(maxPoints))
 	pass
 
 func update_time():
@@ -69,18 +72,7 @@ func addPoints(puntosAnadidos:int):
 func _on_Timer_timeout():
 	tiempo +=1
 	puntos +=1
+	get_tree().get_nodes_in_group("World")[0].get_node("MaxPoints").text = str(maxPoints)
 	update_score()
 	update_time()
 	pass
-
-
-
-#
-#func update_life(cantidad:int):
-#	$UI/vida/barra/contador/fondo/numero.text = str(cantidad)
-#	$UI/vida/barra/medidor.value = cantidad
-#	pass
-#
-#func update_score(cantidad:int):
-#	$Score.text = str(cantidad)
-#	pass

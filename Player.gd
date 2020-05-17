@@ -18,9 +18,6 @@ var atack_down = false
 var atack_left = false
 var time = false
 
-func _ready():
-	pass
-
 func _physics_process(delta):
 	_atack()
 	var axis = get_input_axis()
@@ -71,6 +68,7 @@ func _atack():
 		$Img.animation = "Atack_Left"
 		$Img.frame = 0
 		atack_left = true
+	pass
 
 # Movimiento
 func get_input_axis():
@@ -107,11 +105,12 @@ func apply_friction(amount):
 		motion -= motion.normalized() * amount
 	else:
 		motion = Vector2.ZERO
+	pass
 
 func apply_movement(acceleration):
 	motion += acceleration
 	motion = motion.clamped(MAX_SPEED)
-
+	pass
 
 func _on_Img_animation_finished():
 	if(is_atack):
@@ -125,6 +124,7 @@ func _on_Img_animation_finished():
 			atackLeftInstance.finish()
 			atack_left = false
 		is_atack = false
+	pass
 
 
 func _on_AreaPlayer_area_entered(area):
@@ -138,4 +138,4 @@ func _on_AreaPlayer_area_entered(area):
 			time = true
 			yield(get_tree().create_timer(1.0),"timeout")
 			time = false
-	pass # Replace with function body.
+	pass

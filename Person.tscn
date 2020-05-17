@@ -31,8 +31,9 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 24, 24 )
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 32.0
+height = 64.0
 
 [node name="Person" type="KinematicBody2D" groups=[
 "Person_group",
@@ -45,7 +46,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 5 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="AreaPerson" type="Area2D" parent="."]

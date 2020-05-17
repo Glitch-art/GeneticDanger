@@ -11,13 +11,13 @@ var data = {
 }
 
 func _ready():
-#	var file = File.new()
-#
-#	if file.file_exists(PATH):
-#		load_data()
-#	else:
-#		save_data()
-#		load_data()
+	var file = File.new()
+
+	if file.file_exists(PATH):
+		load_data()
+	else:
+		save_data()
+		load_data()
 	pass
 
 func save_data():
@@ -40,4 +40,3 @@ func load_data():
 	file.close()
 	
 	is_loaded = true
-	

@@ -25,22 +25,7 @@ func createFirstPeople():
 func buscarCasa():
 	var numRandom = rng.randi() % numChunks
 	get_tree().get_nodes_in_group("Chunk_group")[numRandom].activarCasa()
-	
 	pass
-
-#	rng.randi() % 20 			(0-19)
-
-
-#func 
-#
-#const numChunks = 16
-#
-#señal persona recogida:
-#	chunkSeleccionado = 0-15
-#	while (chunkSeleccionado != ChunkconPersona)
-#		Buscar otro chunk aleatorio
-#	poner persona en = chunkSeleccionado.position
-
 
 func _physics_process(delta):
 	if(get_tree().get_nodes_in_group("Player_group")[0]):
@@ -50,13 +35,16 @@ func _physics_process(delta):
 				var distancia = velocidad * delta
 				_seguir_ruta(enemigos[i],distancia)
 				_posicion(enemigos[i])
+	pass
 
 func _posicion(enemigo):
-		_nueva_ruta(enemigo.position,get_tree().get_nodes_in_group("Player_group")[0].position)
+	_nueva_ruta(enemigo.position,get_tree().get_nodes_in_group("Player_group")[0].position)
+	pass
 
 func _nueva_ruta(pos_inicial,pos_final):
 	path = self.get_simple_path(pos_inicial,pos_final,true)
 	path.remove(0)
+	pass
 
 func _seguir_ruta(enemy,distancia):
 	var ultima_pos = enemy.position
@@ -71,5 +59,4 @@ func _seguir_ruta(enemy,distancia):
 		distancia -= distancia_al_final
 		ultima_pos = path[0]
 		path.remove(0)
-
-#var enemigos = get_tree().get_nodes_in_group("Enemy_group")
+	pass

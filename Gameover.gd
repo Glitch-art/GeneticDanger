@@ -17,7 +17,7 @@ func _ready():
 	rng.randomize()
 	var num_random = rng.randi_range(0,frases.size()-1)
 	$Etiqueta.set_text(frases[num_random])
+	pass
 
 func _on_Timer_timeout():
 	$Wallpaper.visible = false
-	pass # Replace with function body.
