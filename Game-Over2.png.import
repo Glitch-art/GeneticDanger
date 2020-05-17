@@ -1,0 +1,43 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+<<<<<<< HEAD:Game-Over2.png.import
+path="res://.import/Game-Over2.png-b273b655dc37fd845508cfc90d0dd0aa.stex"
+=======
+path="res://.import/Icono6.png-ebdef805a4900a1e7a829dbcedd26343.stex"
+>>>>>>> 5f01c4704772b1000e793f1454b06aa2716655a1:Icono6.png.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<< HEAD:Game-Over2.png.import
+source_file="res://Game-Over2.png"
+dest_files=[ "res://.import/Game-Over2.png-b273b655dc37fd845508cfc90d0dd0aa.stex" ]
+=======
+source_file="res://Icono6.png"
+dest_files=[ "res://.import/Icono6.png-ebdef805a4900a1e7a829dbcedd26343.stex" ]
+>>>>>>> 5f01c4704772b1000e793f1454b06aa2716655a1:Icono6.png.import
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
