@@ -28,4 +28,4 @@ func _on_Timer_timeout():
 
 
 func _on_Salir_pressed():
-	get_tree().change_scene("res://Inicio/Inicio.tscn")
+	get_tree().change_scene("res://Main/Main.tscn")

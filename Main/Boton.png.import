@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Touch.png-ad8ae6dad116b195da9f7b47b387ffbe.stex"
+path="res://.import/Boton.png-e3f5a1a820081643f54fe118988643e8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inicio/Touch.png"
-dest_files=[ "res://.import/Touch.png-ad8ae6dad116b195da9f7b47b387ffbe.stex" ]
+source_file="res://Main/Boton.png"
+dest_files=[ "res://.import/Boton.png-e3f5a1a820081643f54fe118988643e8.stex" ]
 
 [params]
 
