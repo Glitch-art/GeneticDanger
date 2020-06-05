@@ -298,7 +298,6 @@ autostart = true
 position = Vector2( 1872, 272 )
 scale = Vector2( 1.14, 1.14 )
 frames = SubResource( 13 )
-frame = 4
 playing = true
 
 [node name="PeopleAtHome" type="Label" parent="."]
